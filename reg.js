@@ -18,3 +18,6 @@ console.log(str.split(reg));
 console.log(str.match(reg));
 // search 대응하는 문자열의 첫 번째 인덱스를 반환 , 없으면 -1
 console.log(str.search(reg));
+
+let regPhone = /\d{3}-\d{4}-\d{4}/;
+console.log(regPhone.test("010-1234-5678"));
