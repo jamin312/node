@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>일반파일업로드</h3>
+    <form
+      action="http://localhost:3000/fileupload"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="file" name="filename" id="" />
+      <input type="submit" value="업로드" />
+    </form>
+    <hr />
+    <h3>이미지업로드</h3>
+    <form
+      action="http://localhost:3000/imgupload"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="file" name="image" id="" />
+      <input type="submit" value="업로드" />
+    </form>
+
+    <script>
+      // CORS - 다른 포트번호라서 보안상 문제로 오류 발생
+      // http://localhost:5500/upload.html
+      fetch("http://localhost:3000/bookList")
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+        })
+        .catch((err) => console.error(err));
+    </script>
+  </body>
+</html>

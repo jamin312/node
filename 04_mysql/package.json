@@ -1,7 +1,7 @@
 {
-  "name": "03_express",
+  "name": "04_mysql",
   "version": "1.0.0",
-  "description": "express 웹 서버 만들기",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,8 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^2.2.0",
-    "cors": "^2.8.5",
     "express": "^5.1.0",
-    "multer": "^2.0.2"
+    "mysql": "^2.18.1",
+    "mysql2": "^3.14.3"
   }
 }
