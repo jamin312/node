@@ -21,7 +21,7 @@ app.get("/mail", (req, resp) => {
       <table>
         <tr>
           <th>보내는 이:</th>
-          <td><input type="email" name="sender" value="process.env.SEND_MAIL" /></td>
+          <td><input type="email" name="sender" value="${process.env.SEND_MAIL}" /></td>
         </tr>
         <tr>
           <th>받는 이:</th>
