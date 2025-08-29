@@ -3,13 +3,29 @@
 const express = require("express");
 const parser = require("body-parser");
 const sql = require("./sql");
+const prodSql = require("./sql/sql");
+const cors = require("cors");
 
 const app = express();
 app.use(parser.urlencoded()); // x-www-form-urlencoded
 app.use(parser.json()); // key:value
+app.use(cors());
 
 app.get("/", (req, resp) => {
   resp.send("/ 실행");
+});
+
+app.post("/api/:alias", async (req, resp) => {
+  let search = prodSql[req.params.alias].query;
+  let param = req.body.param;
+  console.log(param);
+  try {
+    let result = await sql.execute(search, param);
+    resp.json(result);
+  } catch (err) {
+    console.log(err);
+    resp.json({ retCode: "Error" });
+  }
 });
 
 // 목록 select

@@ -60,10 +60,10 @@ app.post("/mail", (req, resp) => {
     to: req.body.receiver,
     subject: req.body.subject,
     text: req.body.content,
-    attachments: [{
-      filename: req.body.file
-      contentType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-    }]
+    // attachments: [{
+    //   filename: req.body.file
+    //   contentType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    // }]
   };
   nodemail.mailSend(data);
   resp.send("done");
